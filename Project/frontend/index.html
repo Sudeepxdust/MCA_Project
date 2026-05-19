@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>EcoFlix Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="topbar">
+    🌍 EcoFlix Dashboard
+</div>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>Environmental Impact Tracker</h1>
+        <p>Carbon Footprint • Water Usage • Sustainability Insights</p>
+
+        <div class="hero-buttons">
+            <button onclick="calculate()">Analyze</button>
+            <button onclick="resetForm()">Reset</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <h2 class="section-title">⚡ Energy Usage</h2>
+    <div class="row">
+        <input id="electricity" placeholder="Electricity (kWh)">
+        <input id="petrol" placeholder="Petrol (L)">
+        <input id="diesel" placeholder="Diesel (L)">
+        <input id="lpg" placeholder="LPG (kg)">
+    </div>
+
+    <h2 class="section-title">🍽️ Food Usage</h2>
+    <div class="row">
+        <input id="rice" placeholder="Rice (kg)">
+        <input id="wheat" placeholder="Wheat (kg)">
+        <input id="chicken" placeholder="Chicken (kg)">
+        <input id="veg" placeholder="Vegetables (kg)">
+    </div>
+
+    <h2 class="section-title">📊 Results</h2>
+
+    <div class="scroll-row">
+
+        <div class="card co2">
+            <h3>CO₂ Emission</h3>
+            <p id="co2">0</p>
+        </div>
+
+        <div class="card water">
+            <h3>Water Usage</h3>
+            <p id="water">0</p>
+        </div>
+
+        <div class="card total">
+            <h3>Total Impact</h3>
+            <p id="total">0</p>
+        </div>
+
+    </div>
+
+    <h3 id="impactLevel"></h3>
+
+    <h2 class="section-title">📈 Impact Chart</h2>
+
+    <div class="chart-box">
+        <canvas id="chart"></canvas>
+    </div>
+
+    <h2 class="section-title">🌱 Suggestions</h2>
+    <ul id="suggestions"></ul>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

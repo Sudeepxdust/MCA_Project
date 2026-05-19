@@ -1,0 +1,150 @@
+/* BASE */
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #141414;
+    color: white;
+}
+
+/* BACKGROUND IMAGE */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url("https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9") no-repeat center;
+    background-size: cover;
+    opacity: 0.08;
+    filter: blur(2px);
+    z-index: -1;
+}
+
+/* TOPBAR */
+.topbar {
+    background: black;
+    padding: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #00e676;
+}
+
+/* HERO */
+.hero {
+    height: 220px;
+    background: linear-gradient(to right, #000, #1c1c1c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* BUTTONS */
+.hero-buttons button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hero-buttons button:first-child {
+    background: #00e676;
+    color: black;
+}
+
+.hero-buttons button:last-child {
+    background: #e50914;
+    color: white;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* SECTION TITLE */
+.section-title {
+    color: #00e676;
+}
+
+/* GLASS INPUT ROW */
+.row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding: 12px;
+    border-radius: 12px;
+}
+
+/* INPUT */
+input {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    background: #222;
+    color: white;
+}
+
+input:focus {
+    box-shadow: 0 0 10px rgba(0, 230, 118, 0.4);
+}
+
+/* CARDS */
+.scroll-row {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+.card {
+    min-width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(34,34,34,0.85);
+    text-align: center;
+}
+
+/* COLORS */
+.co2 { border-top: 3px solid #ff4d4d; }
+.water { border-top: 3px solid #4da6ff; }
+.total { border-top: 3px solid #00e676; }
+
+/* CHART */
+.chart-box {
+    width: 260px;
+    height: 260px;
+    margin: 20px auto;
+    background: rgba(30,30,30,0.8);
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* LIST */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    color: #ccc;
+    padding: 6px;
+}
+
+li:hover {
+    color: #00e676;
+    transform: translateX(5px);
+}
+
+/* IMPACT BADGE */
+#impactLevel {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
