@@ -97,3 +97,14 @@ function resetForm() {
         chartInstance = null;
     }
 }
+
+function toggleInfoPanel() {
+    const modal = document.getElementById("featureModal");
+    modal.classList.toggle("show");
+}
+
+function closeInfoPanel(event) {
+    if (event.target === event.currentTarget) {
+        toggleInfoPanel();
+    }
+}
