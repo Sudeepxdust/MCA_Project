@@ -10,18 +10,78 @@
 <body>
 
 <div class="topbar">
-    🌍 EcoFlix Dashboard
+    <span>🌍 EcoFlix Dashboard</span>
+    <button class="info-button" onclick="toggleInfoPanel()">Feature Panel</button>
 </div>
 
 <div class="hero">
     <div class="hero-content">
         <h1>Environmental Impact Tracker</h1>
         <p>Carbon Footprint • Water Usage • Sustainability Insights</p>
+    </div>
+</div>
 
-        <div class="hero-buttons">
-            <button onclick="calculate()">Analyze</button>
-            <button onclick="resetForm()">Reset</button>
+<div id="featureModal" class="modal-overlay" onclick="closeInfoPanel(event)">
+    <div class="modal-content">
+        <button class="modal-close" onclick="toggleInfoPanel()">×</button>
+        <h2>Feature Panel</h2>
+        <p>Here is how the app components connect, and what tech stack is used:</p>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <div class="feature-icon-block">
+                    <div class="feature-icon">🌐</div>
+                    <span class="feature-icon-label">User UI</span>
+                </div>
+                <div>
+                    <strong>Frontend</strong>
+                    <p>HTML, CSS, JavaScript, Chart.js</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-block">
+                    <div class="feature-icon">🖥️</div>
+                    <span class="feature-icon-label">Server</span>
+                </div>
+                <div>
+                    <strong>Backend</strong>
+                    <p>Flask + Python</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-block">
+                    <div class="feature-icon">🔌</div>
+                    <span class="feature-icon-label">Endpoint</span>
+                </div>
+                <div>
+                    <strong>API</strong>
+                    <p>POST /analyze</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-block">
+                    <div class="feature-icon">🗄️</div>
+                    <span class="feature-icon-label">Cache</span>
+                </div>
+                <div>
+                    <strong>Storage</strong>
+                    <p>localStorage result caching</p>
+                </div>
+            </div>
         </div>
+        <ul>
+            <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Chart.js</li>
+            <li><strong>Backend:</strong> Flask + Python</li>
+            <li><strong>API:</strong> POST <code>/analyze</code> sends input data to the server</li>
+            <li><strong>Processing:</strong> carbon, water, category analysis, recommendations</li>
+            <li><strong>Storage:</strong> localStorage caches the latest result</li>
+        </ul>
+        <p>Connection flow:</p>
+        <ol>
+            <li>User enters energy and food usage data.</li>
+            <li>Analyze sends the payload to the Flask API.</li>
+            <li>The backend computes impact metrics and suggestions.</li>
+            <li>The frontend renders totals, chart, and insights.</li>
+        </ol>
     </div>
 </div>
 
@@ -41,6 +101,11 @@
         <input id="wheat" placeholder="Wheat (kg)">
         <input id="chicken" placeholder="Chicken (kg)">
         <input id="veg" placeholder="Vegetables (kg)">
+    </div>
+
+    <div class="hero-buttons input-actions">
+        <button onclick="calculate()">Analyze</button>
+        <button onclick="resetForm()">Reset</button>
     </div>
 
     <h2 class="section-title">📊 Results</h2>
